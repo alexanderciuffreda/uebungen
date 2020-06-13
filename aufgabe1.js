@@ -120,9 +120,12 @@ function initList() {
 var wishAddedEvent = new CustomEvent("wish-added");
 document.getElementById("btnInitWishes").addEventListener("click", initList);
 //window.addEventListener("load", initEventListeners, false);
-document.getElementById("btnNewWish");
-//document.addEventListener("click", btnNewWishClick);
+document.getElementById("btnNewWish").addEventListener("click", btnNewWishClick);;
 document.addEventListener("wishAdded", function (e) {
   renderWishlist(list);
 });
+
+// initialize list without calling function to check if "Eintragen button works" (does not work when list is not initialzed)
+const list = new Wishlist("Birthday wishes of Christoph");
+
 
