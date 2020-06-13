@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>JavaScript und HTML</title>
+
+
+  <script src='aufgabe1.js' async></script>
+
+  <!-- Scale viewport to device width -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+
+  <!--Import Material UI Fonts from Google-->
+  <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+
+  <!--Import materialize.css from content delivery network (CDN) -->
+  <!-- Compiled and minified CSS -->
+  <link type='text/css' rel='stylesheet'
+    href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css' />
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+</head>
+
+<body>
+  <div class='section center-align'>
+    <h1 class='orange-text'>DOM Manipulation</h1>
+    <h5 class='light'>Übung 2, Aufgabe 1</h5>
+    <h6 class='light'>Material Design with Materialize</h6>
+  </div>
+  <div class='divider'></div>
+
+  <div class='section center-align'>
+    <h2 id='wishlist-name'>Wishlist of Demo User</h2>
+    <div class='container'>
+      <div class='row' id='wishlist-entrypoint'>
+      </div>
+    </div>
+    <div class='divider'></div>
+    <div class='section center-align'>
+      <div class='container'>
+        <div class='row'>
+          <form id='newwish-form' class='col s12'>
+            <div class='input-field row s12 '>
+              <textarea id='newwish-textarea' class='materialize-textarea'></textarea>
+              <label for='newWishTextArea'>Neuer Wunsch</label>
+            </div>
+            <div class='col s12 '>
+              <input id ="btnNewWish" class='btn orange' type='submit' value='Eintragen'>
+            </div>
+            <div class='col'>
+              <input id ="btnClearWishes" class='btn red' type='submit' value='Initialize'>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- Import own JavaScript file -->
+</body>
+
+</html>
