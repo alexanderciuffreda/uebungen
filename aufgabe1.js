@@ -62,17 +62,18 @@ function createWishcard(aWish) {
 }
 
 function btnNewWishClick() {
-  window.alert("BTN New Wish clicked");
+  window.alert("btnNewWishClick()");
   list.addWish(new Wish(document.getElementById("newwish-textarea").value));
   renderWishlist(list);
 }
 
 function renderWishlist(aWishlist) {
+  // Clear existing Wishes from DOM before render updated list
   const parent = document.getElementById("wishlist-entrypoint");
   while (parent.firstChild) {
     parent.firstChild.remove();
   }
-
+  // Add Wishes to DOM
   document.getElementById("wishlist-name").textContent = aWishlist.getName();
   aWishlist.getWishes().forEach((element) => createWishcard(element));
 }
@@ -82,9 +83,11 @@ function initEventListeners(e) {
 
   //document.getElementByid("btnNewWish").addEventListener("click", btnNewWishClick);
 
-  if (typeof list != "object") {
+  if (typeof list != "object") { // check if list already exists
+    // list does not exist, create new list
+
     /*
-     const list = new Wishlist("Birthday wishes of Christoph");
+    const list = new Wishlist("Birthday wishes of Christoph");
   list.addWish(new Wish("Gibson Les Paul 69 Custom"));
   list.addWish(new Wish("Fender Telecaster Thinline"));
   list.addWish(new Wish("Gretsch Electromatic Center Block"));
@@ -95,12 +98,13 @@ function initEventListeners(e) {
   renderWishlist(list);
 
     */
-  }
+  } // List exists, do nothing just render the list
 
   renderWishlist(list);
 }
 
 function initList() {
+  window.alert("initList()")
   const list = new Wishlist("Birthday wishes of Christoph");
   list.addWish(new Wish("Gibson Les Paul 69 Custom"));
   list.addWish(new Wish("Fender Telecaster Thinline"));
@@ -114,10 +118,10 @@ function initList() {
 
 // Events
 var wishAddedEvent = new CustomEvent("wish-added");
-document.getElementById("btnClearWishes").addEventListener("click", initList);
+document.getElementById("btnInitWishes").addEventListener("click", initList);
 //window.addEventListener("load", initEventListeners, false);
-document.getElementById("btnNewWish")
-document.addEventListener("click", btnNewWishClick);
+document.getElementById("btnNewWish");
+//document.addEventListener("click", btnNewWishClick);
 document.addEventListener("wishAdded", function (e) {
   renderWishlist(list);
 });
